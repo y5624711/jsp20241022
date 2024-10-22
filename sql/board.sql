@@ -11,5 +11,14 @@ CREATE TABLE board
     inserted DATETIME      NOT NULL DEFAULT NOW()
 );
 
+SELECT COUNT(*)
+FROM board;
+
 SELECT *
+FROM board;
+
+#페이징 연습용 게시물 복붙
+INSERT INTO board
+    (title, content, writer)
+SELECT title, content, writer
 FROM board;
