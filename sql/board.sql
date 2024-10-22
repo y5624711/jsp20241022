@@ -1,5 +1,7 @@
 use jsp;
 
+DROP TABLE board;
+
 CREATE TABLE board
 (
     id       INT PRIMARY KEY AUTO_INCREMENT,
