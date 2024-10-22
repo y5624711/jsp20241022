@@ -33,7 +33,7 @@ public class BoardController {
     public String newBoard(Board board, RedirectAttributes rttr) {
         service.add(board);
 
-        rttr.addFlashAttribute("message", Map.of("type", "success", "text", "새 게시글이 등록되었습니다."));
+        rttr.addFlashAttribute("message", Map.of("type", "success", "text", "새 게시글이 등록됨요"));
         rttr.addAttribute("id", board.getId());
         return "redirect:/board/view";
     }
