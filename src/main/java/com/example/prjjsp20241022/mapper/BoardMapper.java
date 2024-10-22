@@ -25,7 +25,7 @@ public interface BoardMapper {
     List<Board> selectAll();
 
     @Select("""
-            SELECT * 
+            SELECT *
             FROM board
             WHERE id = #{id}
             """)

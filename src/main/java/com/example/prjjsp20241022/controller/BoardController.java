@@ -56,6 +56,7 @@ public class BoardController {
 
     @GetMapping("edit")
     public void editBoard(Integer id, Model model) {
+        System.out.println("체크");
         Board board = service.get(id);
         model.addAttribute("board", board);
     }

@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<c:import url="/WEB-INF/fragment/nvbar.jsp"/>
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
+
 <h2>${board.id}번 게시물 수정</h2>
 
 <form method="post">
@@ -13,7 +14,7 @@
         <input type="text" value="${board.title}">
     </div>
     <div>본문
-        <textarea name="" id="" cols="30" rows="10">${board.content}"</textarea>
+        <textarea name="" id="" cols="30" rows="10">${board.content}</textarea>
     </div>
     <div>작성자
         <input type="text" value="${board.writer}">

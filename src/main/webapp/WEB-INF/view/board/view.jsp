@@ -31,9 +31,8 @@
         <button>삭제</button>
     </form>
 </div>
-<div>
-    <a href="/borad/edit?id=${board.id}">수정</a>
-</div>
+
+<a href="/board/edit?id=${board.id}">수정</a>
 
 </body>
 </html>
