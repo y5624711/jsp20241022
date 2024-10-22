@@ -1,10 +1,7 @@
 package com.example.prjjsp20241022.mapper;
 
 import com.example.prjjsp20241022.dto.Board;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -16,7 +13,9 @@ public interface BoardMapper {
             (title, content, writer)
             VALUES (#{title}, #{content}, #{writer})
             """)
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Board board);
+
 
     @Select("""
             SELECT * FROM board
@@ -36,4 +35,11 @@ public interface BoardMapper {
             WHERE id = #{id}
             """)
     int deleteById(Integer id);
+
+    @Update("""
+            UPDATE board
+            SET title=#{title}, content=#{content}, writer=#{writer}
+            WHERE id = #{id}
+            """)
+    int update(Board board);
 }

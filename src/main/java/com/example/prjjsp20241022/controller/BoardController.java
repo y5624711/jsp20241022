@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -28,10 +29,11 @@ public class BoardController {
     }
 
     @PostMapping("new")
-    public String newBoard(Board board) {
+    public String newBoard(Board board, RedirectAttributes rttr) {
         service.add(board);
 
-        return "redirect:/board/list";
+        rttr.addAttribute("id", board.getId());
+        return "redirect:/board/view";
     }
 
     @GetMapping("list")
@@ -56,8 +58,15 @@ public class BoardController {
 
     @GetMapping("edit")
     public void editBoard(Integer id, Model model) {
-        System.out.println("체크");
         Board board = service.get(id);
         model.addAttribute("board", board);
+    }
+
+    @PostMapping("edit")
+    public String editBoard(Board board, RedirectAttributes rttr) {
+
+        service.update(board);
+        rttr.addAttribute("id", board.getId());
+        return "redirect:/board/view";
     }
 }
