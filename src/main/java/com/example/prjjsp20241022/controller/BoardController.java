@@ -43,10 +43,11 @@ public class BoardController {
     public void listBoard(@RequestParam(name = "page", defaultValue = "1") Integer page,
                           Model model) {
         //한 페이지에 10개의 게시물
-        List<Board> list = service.list(page);
+        Map<String, Object> result = service.list(page);
         //현재 페이지
-        model.addAttribute("currentPageNumber", page);
-        model.addAttribute("boardList", list);
+        model.addAllAttributes(result);
+//        model.addAttribute("boardList", result.get("boardList"));
+//        model.addAttribute("lastPageNumber", result.get("lastPageNumber"));
 
     }
 

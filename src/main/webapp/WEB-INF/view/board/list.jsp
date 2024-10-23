@@ -34,8 +34,8 @@
 
 <div>
     <%--    pagenation--%>
-    <%--1페이지부터 15페이지까지 표현--%>
-    <c:forEach begin="1" end="15" var="pageNumber">
+    <%--1페이지부터 마지막 페이지까지 표현--%>
+    <c:forEach begin="1" end="${lastPageNumber}" var="pageNumber">
         <a href="/board/list?page=${pageNumber}">${pageNumber}</a>
     </c:forEach>
 </div>
