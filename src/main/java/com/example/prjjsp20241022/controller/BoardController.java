@@ -46,9 +46,6 @@ public class BoardController {
         Map<String, Object> result = service.list(page);
         //현재 페이지
         model.addAllAttributes(result);
-//        model.addAttribute("boardList", result.get("boardList"));
-//        model.addAttribute("lastPageNumber", result.get("lastPageNumber"));
-
     }
 
     @GetMapping("view")
