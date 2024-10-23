@@ -37,14 +37,23 @@
     </c:forEach>
     </tbody>
 </table>
-
+<%--    pagenation--%>
 <div>
-    <%--    pagenation--%>
+    <%-- 이전버튼--%>
+    <c:if test="${pageInfo.hasPrevPage}">
+        <a href="/board/list?page=${pageInfo.prevPageNumber}">이전</a>
+    </c:if>
+
     <%--1페이지부터 마지막 페이지까지 표현--%>
     <c:forEach begin="${pageInfo.leftPageNumber}" end="${pageInfo.rightPageNumber}" var="pageNumber">
         <a class="${pageInfo.currentPageNumber == pageNumber ? 'active' : ''}" <%--현재페이지넘버--%>
            href="/board/list?page=${pageNumber}">${pageNumber}</a>
     </c:forEach>
+
+    <c:if test="${pageInfo.hasNextPage}">
+        <a href="/board/list?page=${pageInfo.nextPageNumber}">다음</a>
+    </c:if>
+
 </div>
 
 </body>
