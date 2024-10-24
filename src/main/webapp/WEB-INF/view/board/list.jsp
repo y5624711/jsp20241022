@@ -43,7 +43,7 @@
                     </th>
                 </tr>
                 </thead>
-                
+
                 <tbody>
                 <c:forEach items="${boardList}" var="board">
                     <tr>
@@ -53,7 +53,7 @@
                                     ${board.title}
                             </a>
                         </td>
-                        <td>${board.content}</td>
+                        <td>${board.write}</td>
                         <td class="d-none d-lg-table-cell">${board.inserted}</td>
                     </tr>
                 </c:forEach>
