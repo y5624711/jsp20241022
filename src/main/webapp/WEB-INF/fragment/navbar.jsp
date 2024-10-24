@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
+
 <div class="mb-3">
+    <%--//게시글 navbar--%>
     <nav class="navbar navbar-expand-lg bg-primary-subtle">
         <div class="container">
             <a class="navbar-brand" href="/board/list">JSP게시판</a>
@@ -23,6 +25,13 @@
                         <a class="nav-link ${param.active == 'new' ? 'active' : ''}" href="/board/new">
                             <i class="fa-solid fa-file-pen"></i>
                             글작성
+                        </a>
+                    </li>
+                    <%-- li.nav-item>a.nav-link--%>
+                    <li class="nav-item">
+                        <a href="/member/signup" class="nav-link">
+                            <i class="fa-solid fa-user-plus"></i>
+                            회원 가입
                         </a>
                     </li>
                 </ul>
