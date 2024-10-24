@@ -45,22 +45,23 @@
             </div>
 
             <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal1">
-                <i class="fa-regular fa-trash-can"></i>
+                <i class="fa-solid fa-trash-can"></i>
                 삭제
             </button>
             <a class="btn btn-outline-primary" href="/board/edit?id=${board.id}">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
                 수정
             </a>
 
             <form id="deleteForm1" class="d-none" action="/board/delete" method="post">
                 <input type="hidden" name="id" value="${board.id}">
             </form>
+
         </div>
     </div>
 </div>
 
-<!-- Modal : 알림창 -->
+<!-- Modal -->
 <div class="modal fade" id="deleteConfirmModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -69,13 +70,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ${board.id}번 게시물을 삭제 하시겠습니까?
+                ${board.id}번 게시물을 삭제하시겠습니까?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                     닫기
                 </button>
-                <button form="deleteForm1" type="submit" class="btn btn-danger">
+                <button form="deleteForm1" class="btn btn-danger">
                     삭제
                 </button>
             </div>
