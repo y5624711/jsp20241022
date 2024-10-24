@@ -21,26 +21,31 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
-            <h2 class="=my-3">새 게시물 작성</h2>
-            <%--            bootstrap 활용--%>
+
+            <h2 class="my-3">새 게시물 작성</h2>
+
+            <%--            bootstrap 사용 --%>
             <form method="post">
+                <%--                div.mb-3>label.form-label+input.form-control--%>
                 <div class="mb-3">
                     <label for="inputTitle1" class="form-label">
                         제목
                     </label>
                     <input id="inputTitle1" name="title" type="text" class="form-control">
                 </div>
+
                 <%--                div.mb-3>label.form-label+textarea.form-control--%>
                 <div class="mb-3">
                     <label for="textareaContent1" class="form-label">본문</label>
-                    <textarea name="content" id="textareaContent1" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="content" id="textareaContent1" rows="10" class="form-control"></textarea>
                 </div>
 
-                <%--                div.m-3>label.form-label+input.form-control--%>
-                <div class="m-3">
+                <%--                div.mb-3>label.form-label+input.form-control--%>
+                <div class="mb-3">
                     <label for="inputWriter1" class="form-label">작성자</label>
                     <input id="inputWriter1" name="writer" type="text" class="form-control">
                 </div>
+
                 <div class="mb-3">
                     <button class="btn btn-primary">
                         <i class="fa-regular fa-floppy-disk"></i>
