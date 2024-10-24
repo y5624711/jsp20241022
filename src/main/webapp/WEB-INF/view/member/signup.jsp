@@ -24,14 +24,17 @@
                     <label for="inputId1" class="form-label1">아이디</label>
                     <input id="inputId1" name="id" type="text" class="form-control">
                 </div>
+
                 <div class="mb-3">
                     <label for="inputPassword1" class="form-label1">비밀번호</label>
                     <input id="inputPassword1" name="password" type="text" class="form-control">
                 </div>
+
                 <div class="mb-3">
                     <label for="inputNickName1" class="form-label1">닉네임</label>
                     <input id="inputNickName1" name="nickName" type="text" class="form-control">
                 </div>
+
                 <div class="mb-3">
                     <label for="textareaDescription" class="form-label1">자기소개</label>
                     <textarea type="text"
@@ -40,12 +43,14 @@
                               name="description"
                               rows="10"></textarea>
                 </div>
+
                 <div class="mb-3">
                     <button class="btn btn-primary">
                         <i class="fa-solid fa-user-plus"></i>
                         가입
                     </button>
                 </div>
+                
             </form>
         </div>
     </div>
