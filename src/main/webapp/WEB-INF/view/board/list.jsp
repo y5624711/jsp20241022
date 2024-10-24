@@ -62,24 +62,34 @@
         </div>
     </div>
 </div>
-<%--    pagenation--%>
-<div>
-    <%-- 이전버튼--%>
-    <c:if test="${pageInfo.hasPrevPage}">
-        <a href="/board/list?page=${pageInfo.prevPageNumber}">이전</a>
-    </c:if>
 
-    <%--1페이지부터 마지막 페이지까지 표현--%>
-    <c:forEach begin="${pageInfo.leftPageNumber}" end="${pageInfo.rightPageNumber}" var="pageNumber">
-        <a class="${pageInfo.currentPageNumber == pageNumber ? 'active' : ''}" <%--현재페이지넘버--%>
-           href="/board/list?page=${pageNumber}">${pageNumber}</a>
-    </c:forEach>
+<%-- bootstrap pagination --%>
+<nav class="mt-4">
+    <ul class="pagination justify-content-center">
+        <c:if test="${pageInfo.hasPrevPage}">
+            <li class="page-item">
+                <a href="/board/list?page=${pageInfo.prevPageNumber}" class="page-link">
+                    &laquo;
+                </a>
+            </li>
+        </c:if>
+        <c:forEach begin="${pageInfo.leftPageNumber}"
+                   end="${pageInfo.rightPageNumber}"
+                   var="pageNumber">
+            <li class="page-item ${pageInfo.currentPageNumber == pageNumber ? 'active' : ''}">
+                <a href="/board/list?page=${pageNumber}" class="page-link">${pageNumber}</a>
+            </li>
+        </c:forEach>
+        <c:if test="${pageInfo.hasNextPage}">
+            <li class="page-item">
+                <a href="/board/list?page=${pageInfo.nextPageNumber}" class="page-link">
+                    &raquo;
+                </a>
+            </li>
+        </c:if>
+    </ul>
+</nav>
 
-    <c:if test="${pageInfo.hasNextPage}">
-        <a href="/board/list?page=${pageInfo.nextPageNumber}">다음</a>
-    </c:if>
-
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

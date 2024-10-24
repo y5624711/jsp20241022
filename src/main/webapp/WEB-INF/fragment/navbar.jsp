@@ -32,6 +32,7 @@
 </div>
 
 <%--조각 : fragment--%>
+
 <c:if test="${not empty message}">
     <div class="container mb-3">
         <div class="row justify-content-center">
