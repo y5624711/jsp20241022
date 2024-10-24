@@ -47,4 +47,18 @@ public class MemberController {
         model.addAttribute("member", member);
     }
 
+    @PostMapping("delete")
+    public String delete(String id, String password, RedirectAttributes rttr) {
+        if (service.remove(id, password)) {
+            //탈퇴성공
+            rttr.addFlashAttribute("message", Map.of("type", "dark", "text", "회원 탈퇴하였습니다."));
+
+            return "redirect:/member/list";
+        } else {
+            //탈퇴 실패
+            rttr.addFlashAttribute("message", Map.of("type", "danger", "text", "패스워드가 일치하지 않습니다"));
+            return "redirect:/member/view?id=" + id;
+        }
+    }
+
 }
