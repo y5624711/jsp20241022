@@ -53,7 +53,7 @@
                                     ${board.title}
                             </a>
                         </td>
-                        <td>${board.write}</td>
+                        <td>${board.writer}</td>
                         <td class="d-none d-lg-table-cell">${board.inserted}</td>
                     </tr>
                 </c:forEach>
