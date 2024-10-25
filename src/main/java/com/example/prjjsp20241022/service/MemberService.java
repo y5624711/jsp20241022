@@ -42,4 +42,8 @@ public class MemberService {
 
         return cnt == 1;
     }
+
+    public Member userLogin(String id, String password) {
+        return mapper.selectByIdAndPassword(id, password);
+    }
 }

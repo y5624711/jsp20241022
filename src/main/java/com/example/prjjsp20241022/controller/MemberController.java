@@ -99,7 +99,7 @@ public class MemberController {
                                       String oldPassword,
                                       String newPassword,
                                       RedirectAttributes rttr) {
-        
+
         if (service.updatePassword(id, oldPassword, newPassword)) {
             rttr.addFlashAttribute("message", Map.of("type", "success",
                     "text", "암호가 변경되었습니다."));
@@ -110,6 +110,26 @@ public class MemberController {
                     "text", "암호가 변경되지 않았습니다."));
             rttr.addAttribute("id", id);
             return "redirect:/member/edit-password";
+        }
+    }
+
+    @GetMapping("login")
+    public void login() {
+
+    }
+
+    @PostMapping("login")
+    public String loginProcess(String id, String password, RedirectAttributes rttr) {
+        Member member = service.userLogin(id, password);
+
+        if (member == null) {
+            //로그인 실패
+            rttr.addFlashAttribute("message", Map.of("type", "warning", "text", "아이디나 패스워드가 일치하지 않습니다"));
+            return "redirect:/member/login";
+        } else {
+            //성공
+            rttr.addFlashAttribute("message", Map.of("type", "success", "text", "로그인 되었습니다."));
+            return "redirect:/board/list";
         }
     }
 }
