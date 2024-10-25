@@ -64,6 +64,10 @@
                     <i class="fa-solid fa-trash-can"></i>
                     탈퇴
                 </button>
+                <a class="btn btn-outline-primary" href="/member/edit?id=${member.id}">
+                    <i class="fa-solid fa-user-pen"></i>
+                    수정
+                </a>
             </div>
         </div>
     </div>
@@ -98,6 +102,10 @@
                 <button form="deleteForm1" class="btn btn-danger">
                     탈퇴
                 </button>
+                <a class="btn btn-outline-primary" href="/member/edit?id=${board.id}">
+                    <i class="fa-solid fa-user-pen"></i>
+                    수정
+                </a>
             </div>
         </div>
     </div>
