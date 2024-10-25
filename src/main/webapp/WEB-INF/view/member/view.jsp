@@ -12,9 +12,10 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
+
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
 
-<%--div.container>div.row>div.col>h2.my-3+form--%>
+<%--div.container>div.row>div.col--%>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
@@ -61,7 +62,7 @@
             </div>
             <div class="mb-3">
                 <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal1">
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-user-minus"></i>
                     탈퇴
                 </button>
                 <a class="btn btn-outline-primary" href="/member/edit?id=${member.id}">
@@ -82,8 +83,7 @@
                 <h1 class="modal-title fs-5">탈퇴 확인</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
-            <div class="modal-body"><%--탈퇴확인시 암호입력--%>
+            <div class="modal-body">
                 <div>
                     <form action="/member/delete" method="post" id="deleteForm1">
                         <input type="hidden" name="id" value="${member.id}">
@@ -94,7 +94,6 @@
                     </form>
                 </div>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                     닫기
@@ -102,10 +101,6 @@
                 <button form="deleteForm1" class="btn btn-danger">
                     탈퇴
                 </button>
-                <a class="btn btn-outline-primary" href="/member/edit?id=${board.id}">
-                    <i class="fa-solid fa-user-pen"></i>
-                    수정
-                </a>
             </div>
         </div>
     </div>
@@ -118,6 +113,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-</body>
 </body>
 </html>

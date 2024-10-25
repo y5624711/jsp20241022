@@ -14,16 +14,15 @@
 <body>
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
 
-<%--div.container>div.row>div.col>h2.my-3+form--%>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
+
             <h2 class="my-3">
-                회원정보 수정
+                회원 정보 수정
             </h2>
+
             <form action="/member/edit" method="post">
-                <%-- id, password, nickName, description --%>
-                <%--                div.mb-3*4>label.form-label+input.form-control--%>
                 <div class="mb-3">
                     <label for="inputId1" class="form-label">
                         아이디
@@ -60,13 +59,11 @@
     </div>
 </div>
 
-
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-</body>
 </body>
 </html>
